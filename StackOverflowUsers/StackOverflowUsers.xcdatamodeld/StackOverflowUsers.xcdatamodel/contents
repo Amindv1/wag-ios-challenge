@@ -2,13 +2,14 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Gravatar" representedClassName="Gravatar" syncable="YES" codeGenerationType="class">
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="gravatarURL" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GravatarURL" inverseName="image" inverseEntity="GravatarURL" syncable="YES"/>
     </entity>
     <entity name="GravatarURL" representedClassName="GravatarURL" syncable="YES" codeGenerationType="class">
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gravatar" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gravatar" inverseName="gravatarURL" inverseEntity="Gravatar" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Gravatar" positionX="-45" positionY="0" width="128" height="60"/>
+        <element name="Gravatar" positionX="-45" positionY="0" width="128" height="75"/>
         <element name="GravatarURL" positionX="-9" positionY="54" width="128" height="75"/>
     </elements>
 </model>

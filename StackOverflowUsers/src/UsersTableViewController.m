@@ -94,6 +94,8 @@ NSMutableArray *data;
                         GravatarURL *gURL = [NSEntityDescription insertNewObjectForEntityForName:@"GravatarURL" inManagedObjectContext:privateContext];
                         [gURL setImageURL:gravatarURL];
                         [g setImageData:gravatarImageData];
+                        [g setGravatarURL:gURL];
+                        [gURL setImage:g];
                         NSError *error = nil;
                         if ([privateContext hasChanges] && ![privateContext save:&error]) {
                             NSLog(@"Unresolved error %@, %@", error, error.userInfo);
